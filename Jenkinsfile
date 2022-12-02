@@ -11,7 +11,8 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'docker build -t new .'
-                sh 'docker run -d -p 8081:8080 new' 
+                sh 'docker run -d -P new' 
+                sh 'docker ps -a'
                 
                   
             }
