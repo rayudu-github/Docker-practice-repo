@@ -10,7 +10,7 @@ pipeline {
         stage('testing-docker') {
             steps {
                 sh 'docker info'
-                sh 'docker build -t new ./Docker-practice-repo/Dockerfile .'
+                sh 'docker build -t new ./Docker-practice-repo/Dockerfile'
                 
                   
             }
