@@ -12,7 +12,7 @@ pipeline {
                 sh 'docker info'
                 sh 'docker image build -t spring-pet-clinic .'
                 sh 'docker image ls'
-                sh 'docker conatiner run --name spc -it -d -P spring-pet-clinic'
+                sh 'docker container run --name spc -it -d -P spring-pet-clinic'
                 sh 'docker container ls'
             }
         }
