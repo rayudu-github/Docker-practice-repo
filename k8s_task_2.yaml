@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: jenkins-rs
+spec:
+  minReadySeconds: 4
+  replicas: 9
+  template:
+    metadata:
+      name: jenkins-pod
+    spec:
+      containers:
+        - name: jenins
+          image: jenkins:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+kind: Pod
+metadata:
+  name: restart-never
+spec:
+  containers:
+    - name: restart-never
+      image: alpine:3
+      command:
+        - sleep
+        - "2"
+  restartPolicy: Never
